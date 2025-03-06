@@ -15,5 +15,14 @@ public class Wizard extends MiddleEarthCharacter {
 		super(name, health, power);
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * Overrides getRace() method. Returns character's race, which is also their class, 
+	 * as a string.
+	 */
+	@Override
+	public String getRace() {
+		return(this.getClass().getSimpleName());
+	}
 
 }
