@@ -64,5 +64,33 @@ public class CharacterManager {
 		}
 		return null;
 	};
+	
+	/**
+	 * Updates data of character in character management system. Returns true if character's
+	 * information is successfully updates. Returns false if character cannot be found or 
+	 * information hasn't changed.
+	 * 
+	 * @param character - Character being updated
+	 * @param name - Character's updated name
+	 * @param health - Character's updates health points
+	 * @param power - Character's updated power
+	 */	
+	public boolean updateCharacter (MiddleEarthCharacter character, String name, int health, int power) {
+		if (character == null) {
+			return false;
+		}
+		for (int i = 0; i < size; i++) {
+			 if (characters[i] == character) {
+				 if (characters[i].getName() == name && characters[i].getHealth() == health && characters[i].getPower() == power) {
+					 return false;
+				 }
+				 characters[i].setName(name);
+				 characters[i].setHealth(health);
+				 characters[i].setPower(power);
+				 return true;
+			 }
+		 }
+		return false;
+	};
 
 }
