@@ -14,5 +14,14 @@ public class Orc extends MiddleEarthCharacter {
 	public Orc(String name, double health, double power) {
 		super(name, health, power);
 	}
+	
+	/**
+	 * Overrides getRace() method. Returns character's race, which is also their class, 
+	 * as a string.
+	 */
+	@Override
+	public String getRace() {
+		return(this.getClass().getSimpleName());
+	}
 
 }
