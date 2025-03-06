@@ -24,5 +24,36 @@ public class Wizard extends MiddleEarthCharacter {
 	public String getRace() {
 		return(this.getClass().getSimpleName());
 	}
+	
+	@Override
+	public boolean attack(MiddleEarthCharacter target) {
+		double hp = target.getHealth();
+		double damage = this.getPower();
+		String r = target.getRace();
+		
+				
+		if (r.equals("Human") || r.equals("Wizard")) {
+			
+			System.out.println(this.getName() + " cast a spell and missed " +  target.getName() + " for 0 damage!");
+			
+			return false;
+		}
+		if (r.equals("Dwarf")) {
+			
+			target.setHealth(hp - (damage*1.5));
+			
+			System.out.println(this.getName() + "'s attack was super effective! They hit " + target.getName() + " with a fireball for " + damage*1.5 + " damage.");
+			
+			return true;
+		}
+		else {
+			
+			target.setHealth(hp - damage);
+			
+			System.out.println(this.getName() + "'s attack was effective! They hit " + target.getName() + " with an ice beam for " + damage + " damage.");
+			
+			return true;
+		}
+	}
 
 }
