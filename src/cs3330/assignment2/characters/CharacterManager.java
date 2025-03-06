@@ -2,8 +2,6 @@ package cs3330.assignment2.characters;
 
 import java.util.Arrays;
 
-import cs3330.project2.characters.MiddleEarthCharacter;
-
 public class CharacterManager {
 	
 	private MiddleEarthCharacter[] characters;
@@ -121,5 +119,14 @@ public class CharacterManager {
 		}
 		return false;
 	};
+	
+	/**
+	 * Displays name, health and power of all characters in the character management system.
+	 */
+	 public void displayAllCharacters() {
+		 for (int i = 0; i < size; i++) {
+			 characters[i].displayInfo();
+		 }
+	 };
 
 }
