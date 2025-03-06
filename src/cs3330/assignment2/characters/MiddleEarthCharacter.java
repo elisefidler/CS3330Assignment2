@@ -1,5 +1,7 @@
 package cs3330.assignment2.characters;
 
+import cs3330.project2.characters.MiddleEarthCharacter;
+
 public abstract class MiddleEarthCharacter {
 	private String name;
 	private double health;
@@ -67,4 +69,13 @@ public abstract class MiddleEarthCharacter {
 	public void setPower(double power) {
 		this.power = power;
 	}
+	
+	/**
+	 * Abstract method simulating attack from current character against target character.
+	 * Returns true if attacks reduces target’s health. Returns false if attack
+	 * does 0 damage. Characters that are the same race cannot do any damage to each other.
+	 *  
+	 *  @param target - Character being attacked.
+	 */
+	abstract boolean attack(MiddleEarthCharacter target);
 }
