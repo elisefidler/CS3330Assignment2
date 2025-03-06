@@ -1,6 +1,6 @@
 package cs3330.assignment2.characters;
 
-import cs3330.project2.characters.MiddleEarthCharacter;
+import cs3330.assignment2.characters.MiddleEarthCharacter;
 
 public abstract class MiddleEarthCharacter {
 	private String name;
@@ -78,4 +78,9 @@ public abstract class MiddleEarthCharacter {
 	 *  @param target - Character being attacked.
 	 */
 	abstract boolean attack(MiddleEarthCharacter target);
+	
+	/**
+	 * Abstract method that returns race of character.
+	 */
+	abstract String getRace();
 }
