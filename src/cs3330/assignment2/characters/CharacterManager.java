@@ -2,6 +2,8 @@ package cs3330.assignment2.characters;
 
 import java.util.Arrays;
 
+import cs3330.project2.characters.MiddleEarthCharacter;
+
 public class CharacterManager {
 	
 	private MiddleEarthCharacter[] characters;
@@ -43,6 +45,24 @@ public class CharacterManager {
 		}
 		
 		return false;
+	};
+	
+	/**
+	 * Searches for character by name in character management system. Returns character
+	 * if it is found. Returns null otherwise.
+	 * 
+	 * @param name - Name of character being searched for.
+	 */
+	public MiddleEarthCharacter getCharacter(String name) {
+		if (size == 0 || name == null) {
+			return null;
+		}
+		for (int i = 0; i < size; i++) {
+			if (characters[i].getName() == name) {
+				return characters[i];
+			}
+		}
+		return null;
 	};
 
 }
