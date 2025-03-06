@@ -92,5 +92,34 @@ public class CharacterManager {
 		 }
 		return false;
 	};
+	
+	/**
+	 * Deletes character from character management system. Returns true and updates size if 
+	 * character is successfully removed. Returns false otherwise.
+	 * 
+	 * @param character - Character being deleted
+	 */
+	public boolean deleteCharacter(MiddleEarthCharacter character) {
+		if (character == null) {
+			return false;
+		}
+		for (int i = 0; i < size; i++) {
+			if (characters[i] == character) {
+				MiddleEarthCharacter[] temp = new MiddleEarthCharacter[characters.length];
+				for (int j = 0; j < i; j++) {
+					temp[j] = characters[j];
+				}
+				for (int j = i; j < characters.length - 1; j++) {
+					temp[j] = characters[j+1];
+				}
+				for (int k = 0; k < temp.length; k++) {
+					characters[k] = temp[k];
+				}
+				size--;
+				return true;
+			}
+		}
+		return false;
+	};
 
 }
